@@ -2,6 +2,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const fileRoutes = require('./routes/files'); // Importa las rutas de archivos
 // const mongoose = require('mongoose');
 
 // Inicializar Express
@@ -19,6 +20,9 @@ app.use(cors());
 // })
 // .then(() => console.log('MongoDB connected...'))
 // .catch(err => console.error(err));
+
+// Usar las rutas
+app.use('/api', fileRoutes); // Usa las rutas de archivos
 
 // Definir una ruta simple
 app.get('/', (req, res) => {
